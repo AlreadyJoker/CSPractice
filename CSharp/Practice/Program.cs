@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Practice");
             CSharpLevel1.Practice();
         }
     }
