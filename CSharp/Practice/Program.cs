@@ -5,6 +5,6 @@
         static void Main(string[] args)
         {
             CSharpLevel1.Practice();
-        }
+        } 
     }
 }

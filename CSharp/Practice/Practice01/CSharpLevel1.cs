@@ -14,7 +14,8 @@ namespace Practice
             //Practice2();
             //Practice3();
             //Practice4();
-            Practice5();
+            //Practice5();
+            Practice6();
         }
         public static void Prcatice1()
         {
@@ -63,7 +64,24 @@ namespace Practice
         }
         public static void Practice6()
         {
-
+            ConsoleKey key = default(ConsoleKey);
+            while(key != ConsoleKey.Z)
+            {
+                key = Console.ReadKey().Key;
+                switch(key)
+                {
+                    case ConsoleKey.A:
+                        Console.WriteLine("我是小明");
+                        Console.WriteLine("我今年18");
+                        Console.WriteLine("我的爱好是制作游戏");
+                        Console.WriteLine("我要好好学习，天天向上");
+                        break;
+                    case ConsoleKey.S:
+                        Console.WriteLine("s 我是小明\n我今年18\n我的爱好是制作游戏\n我要好好学习，天天向上\n");
+                        break;
+                   
+                }
+            }
         }
 
     }
