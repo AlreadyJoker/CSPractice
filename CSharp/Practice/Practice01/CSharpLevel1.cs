@@ -11,7 +11,7 @@ namespace Practice
     {
         public static void Practice()
         {
-            Practice12();
+            Practice13();
         }
         public static void Prcatice1()
         {
@@ -305,6 +305,198 @@ namespace Practice
 
         }
 
+        public static void Practice13()
+        {
+            byte num = 0;
+            PrintTitle("分支与循环");
+            Question01();
+            Question02();
+            Question03();
+            Question04();
+            Question05();
+            Question06();
+            Question07();
+            Question08();
+            Question09();
+            void Question01()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入学习时间");
+                int minute;
+                try
+                {
+                    minute = int.Parse(Console.ReadLine());
+                    if (minute > 60)
+                        Console.WriteLine("今天学习了{0}分钟，看来你离成功又近了一步！", minute);
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine("第一题输入格式错误");
+                }
+               
+            }
+            void Question02()
+            {
+                PrintSubTitle(ref num);
+                int chinese;
+                int math;
+                int english;
+                try
+                {
+                    Console.WriteLine("请输入语文成绩");
+                    chinese = int.Parse(Console.ReadLine());
+                    Console.WriteLine("请输入数学成绩");
+                    math = int.Parse(Console.ReadLine());
+                    Console.WriteLine("请输入英语成绩");
+                    english = int.Parse(Console.ReadLine());
+
+                    if ((chinese > 70 && math > 80 && english > 90) || (chinese == 100 || english == 100 || math == 100) || (chinese > 90 && (math > 70 || english > 70)))
+                        Console.WriteLine("非常棒，继续加油");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第二题输入格式错误");
+                }
+            }
+            void Question03()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入小赵的Unity成绩");
+                int score;
+                try
+                {
+                    score = int.Parse(Console.ReadLine());
+                    if (score >= 90)
+                        Console.WriteLine("奖励100");
+                    else
+                        Console.WriteLine("不能玩游戏");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第三题输入格式错误");
+                }
+            }
+            void Question04()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入两个数字");
+                int a;
+                int b;
+                try
+                {
+                    a = int.Parse(Console.ReadLine());
+                    b = int.Parse(Console.ReadLine());
+                    if ((a + b) > 100 || (a > b) ? a % b == 0 : b % a == 0)
+                        Console.WriteLine("a的值为 " + a);
+                    else
+                        Console.WriteLine("b的值为 " + b);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第四题输入格式错误");
+                }
+            }
+            void Question05()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入一个整数");
+                int num01;
+                try
+                {
+                    num01 = int.Parse(Console.ReadLine());
+                    if (num01 % 2 == 0)
+                        Console.WriteLine("Your print is even");
+                    else
+                        Console.WriteLine("You print is odd");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第五题输入格式错误");
+                }
+
+            }
+            void Question06()
+            {
+                PrintSubTitle(ref num);
+                int a = 10;
+                int b = 20;
+                int c = 98;
+                if (a > b && a > c)
+                    Console.WriteLine("最大值为a " + a);
+                else if(b > a && b > c)
+                    Console.WriteLine("最大值为b " + b);
+                else
+                    Console.WriteLine("最大值为c " + c);
+            }
+            void Question07()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入一个字符");
+                char a;
+                try
+                {
+                    a = char.Parse(Console.ReadLine());
+                    if (a >= '0' && a <= '9')
+                        Console.WriteLine("您输入了一个数字");
+                    else
+                        Console.WriteLine("这不是一个数字");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第七题输入格式错误");
+                }
+
+            }
+            void Question08()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入用户名");
+                string userName = Console.ReadLine();
+                Console.WriteLine("请输入密码");
+                string password = Console.ReadLine();
+                if(userName == "admin")
+                {
+                    if (password == "8888")
+                        Console.WriteLine("正确");
+                    else
+                        Console.WriteLine("密码错误");
+                }
+                else
+                    Console.WriteLine("用户名不存在");
+
+            }
+            void Question09()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入年龄");
+                int age;
+                try
+                {
+                    age = int.Parse(Console.ReadLine());
+                    if (age < 13)
+                        Console.WriteLine("不能查看");
+                    else if (age >= 18)
+                        Console.WriteLine("可以查看");
+                    else if(age >= 13 && age < 18)
+                    {
+                        Console.WriteLine("继续查看 yse / no");
+                        string temp = Console.ReadLine();
+                        if (temp == "yes")
+                            Console.WriteLine("查看内容");
+                        else if (temp == "no")
+                            Console.WriteLine("退出查看");
+                        else
+                            Console.WriteLine("输入错误");
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第一题输入格式错误");
+                }
+
+            }
+        }
         public static void PrintTitle(string title) 
         {
             Console.WriteLine("----------------------------------------");
