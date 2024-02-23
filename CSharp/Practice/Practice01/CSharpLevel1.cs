@@ -11,7 +11,7 @@ namespace Practice
     {
         public static void Practice()
         {
-            Practice13();
+            //Practice13();
         }
         public static void Prcatice1()
         {
