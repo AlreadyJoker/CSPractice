@@ -11,7 +11,7 @@ namespace Practice
     {
         public static void Practice()
         {
-            Practice15();
+            Practice17();
         }
         public static void Prcatice1()
         {
@@ -774,6 +774,123 @@ namespace Practice
                 }
 
             }   
+        }
+
+        public static void Practice16()
+        {
+            byte num = 0;
+            PrintTitle("do while循环");
+            Question01();
+            Question02();
+            void Question01()
+            {
+                PrintSubTitle(ref num);
+                string userName = "";
+                string password = "";
+                do
+                {
+                    Console.WriteLine("请输入用户名");
+                    userName = Console.ReadLine();
+                    Console.WriteLine("请输入密码");
+                    password = Console.ReadLine();
+                } while (userName != "admin" || password != "8888");
+            }
+            void Question02()
+            {
+                PrintSubTitle(ref num);
+                string input = "";
+                do
+                {
+                    Console.WriteLine("请输入你的名字");
+                    input = Console.ReadLine();
+                } while (input != "q");
+            }
+        }
+
+        public static void Practice17()
+        {
+            byte num = 0;
+            PrintTitle("for循环");
+            Question01();
+            Question02();
+            Question03();
+            Question04();
+            Question05();
+            Question06();
+            void Question01()
+            {
+                PrintSubTitle(ref num);
+                for (int i = 1; i <= 100; i++)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+            void Question02()
+            {
+                PrintSubTitle(ref num);
+                int sum = 0;
+                for (int i = 1; i <= 100; i++)
+                {
+                    if (i % 2 == 0)
+                        sum += i;
+                }
+                Console.WriteLine("1~100中偶数的和为 " + sum);
+            }
+            void Question03()
+            {
+                PrintSubTitle(ref num);
+                for (int i = 1; i <= 9; i++)
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write($"{j} X {i} = {i * j}");
+                        Console.Write("  ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+            void Question04()
+            {
+                PrintSubTitle(ref num);
+                for (int i = 0; i < 10; i++)
+                {
+                    if (i == 0 || i == 9)
+                        Console.WriteLine("**********");
+                    else
+                        Console.WriteLine("*        *");
+                }
+            }
+            void Question05()
+            {
+                PrintSubTitle(ref num);
+                for(int i = 1; i <= 10; i++)
+                {
+                    for(int j = 1; j <= i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
+            }
+            void Question06()
+            {
+                PrintSubTitle(ref num);
+                //空格的数量
+                for(int i = 1; i <= 10; i++)
+                {
+                    int num = 16 - i;
+                    for(int m = 0; m < num; m++)
+                    {
+                        Console.Write(" ");
+                    }
+                    int itemNnm = 1 + 2 * (i - 1);
+                    for (int n = 0; n < itemNnm; n++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
         public static void PrintTitle(string title) 
         {
