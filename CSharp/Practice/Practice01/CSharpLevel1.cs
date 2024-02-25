@@ -11,7 +11,7 @@ namespace Practice
     {
         public static void Practice()
         {
-            //Practice13();
+            Practice15();
         }
         public static void Prcatice1()
         {
@@ -496,6 +496,284 @@ namespace Practice
                 }
 
             }
+        }
+
+        public static void Practice14()
+        {
+            byte num = 0;
+            PrintTitle("分支Switch");
+            Question01();
+            Question02();
+            Question03();
+            Question04();
+            void Question01()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入唐老师的评级");
+                char level = char.Parse(Console.ReadLine());
+                short salery = 4000;
+                switch (level)
+                {
+                    case 'A':
+                        salery += 500;
+                        break;
+                    case 'B':
+                        salery += 0;
+                        break;
+                    case 'C':
+                        salery -= 300;
+                        break;
+                    case 'D':
+                        salery -= 500;
+                        break;
+                    case 'E':
+                        salery -= 800;
+                        break;
+                    default:
+                        Console.WriteLine("请输入A - E");
+                        break;
+                }
+                Console.WriteLine("唐老师的工资是{0}", salery);
+            }
+            void Question02()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请选择:\n\t1 中杯 5￥\n\t2 大杯7￥\n\t3 超大杯 11￥");
+                int cost = int.Parse(Console.ReadLine());
+                switch(cost)
+                {
+                    case 1:
+                        Console.WriteLine("还剩{0}", 10 - 5);
+                        break;
+                    case 2:
+                        Console.WriteLine("还剩{0}", 10 - 7);
+                        break;
+                    case 3:
+                        Console.WriteLine("钱不够");
+                        break;
+                    default:
+                        Console.WriteLine("输入错误");
+                        break;
+                }
+            }
+            void Question03()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入学生的成绩");
+                int score = int.Parse(Console.ReadLine());
+                char level;
+                score /= 10;
+                switch (score)
+                {
+                    case 10:
+                    case 9:
+                        Console.WriteLine("你的成绩是A");
+                        break;
+                    case 8:
+                        Console.WriteLine("你的成绩是B");
+                        break;
+                    case 7:
+                        Console.WriteLine("你的成绩是C");
+                        break;
+                    case 6:
+                        Console.WriteLine("你的成绩是D");
+                        break;
+                    default:
+                        Console.WriteLine("你的成绩是E");
+                        break;
+                }
+            }
+            void Question04()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入0 - 9");
+                byte temp = byte.Parse(Console.ReadLine());
+                switch (temp)
+                {
+                    case 0:
+                        Console.WriteLine("零");
+                        break;
+                    case 1:
+                        Console.WriteLine("一");
+                        break;
+                    case 2:
+                        Console.WriteLine("二");
+                        break;
+                    case 3:
+                        Console.WriteLine("三");
+                        break;
+                    case 4:
+                        Console.WriteLine("四");
+                        break;
+                    case 5:
+                        Console.WriteLine("五");
+                        break;
+                    case 6:
+                        Console.WriteLine("六");
+                        break;
+                    case 7:
+                        Console.WriteLine("七");
+                        break;
+                    case 8:
+                        Console.WriteLine("八");
+                        break;
+                    case 9:
+                        Console.WriteLine("九");
+                        break;
+                    default:
+                        Console.WriteLine("输入错误");
+                        break;
+                }
+
+            }
+        }
+
+        public static void Practice15()
+        {
+            byte num = 0;
+            PrintTitle("while循环");
+            //Question01();
+            //Question02();
+            //Question03();
+            //Question04();
+            //Question05();
+            //Question06();
+            //Question07();
+            Question08();
+            
+            void Question01()
+            {
+                PrintSubTitle(ref num);
+                int i = 0;
+                while(i < 100)
+                {
+                    Console.WriteLine(++i);
+                }
+            }
+            void Question02()
+            {
+                PrintSubTitle(ref num);
+                int i = 0;
+                int sum = 0;
+                while (i != 100)
+                {
+                    i++;
+                    sum += i;
+                }
+                Console.WriteLine("1 - 100的和为 " + sum);
+            }
+            void Question03()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入一个数判断是不是素数");
+                int temp;
+                if (int.TryParse(Console.ReadLine(), out temp))
+                {
+                    if (temp == 1)
+                        Console.WriteLine("不是素数");
+                    else
+                    {
+                        int index = 2;
+                        while(index != temp)
+                        {
+                            if (temp % index == 0)
+                            {
+                                Console.WriteLine("是素数");
+                                return;
+                            }
+                            index++;
+                        }
+                        Console.WriteLine("不是素数");
+                    }
+                }
+            }
+            void Question04()
+            {
+                PrintSubTitle(ref num);
+                string userName = "";
+                string password = "";
+                while(userName != "admin" || password != "8888")
+                {
+                    Console.WriteLine("请输入用品户名");
+                    userName = Console.ReadLine();
+                    Console.WriteLine("请输入密码");
+                    password = Console.ReadLine();
+                }               
+            }
+            void Question05()
+            {
+                PrintSubTitle(ref num);
+                Console.WriteLine("请输入班级人数");
+                int num01 = int.Parse(Console.ReadLine());
+                int index = 1;
+                int sum = 0;
+                while(index <= num01)
+                {
+                    Console.WriteLine("请输入第{0}位同学的成绩", index);
+                    sum += int.Parse(Console.ReadLine());
+                    index++;
+                }
+                Console.WriteLine("{0}位同学的总成绩是{1}", num01, sum);
+            }
+            void Question06()
+            {
+                PrintSubTitle(ref num);
+                int sum = 0;
+                int index = 0;
+                while(sum <= 500)
+                {
+                    index++;
+                    sum += index;
+                }
+                Console.WriteLine("加到{0}可以大于500", index);
+            }
+            void Question07()
+            {
+                PrintSubTitle(ref num);
+                float sum = 100;
+                int index = 0;
+                while (sum < 1000)
+                {
+                    sum += sum * 0.2F;
+                    index++;
+                }
+                Console.WriteLine("第{0}个月", index);
+            }
+            void Question08()
+            {
+                PrintSubTitle(ref num);
+                int first = 1;
+                int last = 1;
+                int index = 2;
+                while(index < 20)
+                {
+                    index++;
+                    if(index % 2 !=0)
+                        first += last;
+                    else
+                        last += first;
+                }
+                Console.WriteLine("第20位是{0}", last);
+            }
+            void Question09()
+            {
+                PrintSubTitle(ref num);
+                for (int i = 2; i < 100; i++)
+                {
+                    bool isPrime = true;
+                    for (int j = 2; j < i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                    if (isPrime)
+                        Console.WriteLine(i);
+                }
+
+            }   
         }
         public static void PrintTitle(string title) 
         {
