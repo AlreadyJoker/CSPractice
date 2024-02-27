@@ -11,7 +11,7 @@ namespace Practice
     {
         public static void Practice()
         {
-            Practice17();
+            BeatMonster();
         }
         public static void Prcatice1()
         {
@@ -891,6 +891,27 @@ namespace Practice
                     Console.WriteLine();
                 }
             }
+        }
+
+        public static void BeatMonster()
+        {
+            Console.WriteLine("Beat Monster");
+            Random random = new Random();
+            int ultermanAtk;
+            int monsterDef = 10;
+            int monsterHp = 20;
+            while(monsterHp > 0) 
+            {
+                Console.WriteLine("Input Enter Keybord to Execute");
+                if(Console.ReadKey().Key == ConsoleKey.Enter)
+                {
+                    ultermanAtk = random.Next(8, 13);
+                    monsterHp -= ultermanAtk;
+                    Console.WriteLine("攻击怪兽：奥特曼攻击力：{0}，怪兽当前血量{1}", ultermanAtk, monsterHp);
+                }
+            }
+            Console.WriteLine("游戏结束：怪兽血量{0}", monsterHp);
+
         }
         public static void PrintTitle(string title) 
         {
