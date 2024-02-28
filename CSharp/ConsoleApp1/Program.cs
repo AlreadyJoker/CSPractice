@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     internal class Program
     {
@@ -12,6 +10,7 @@ namespace ConsoleApp1
         static string gameEndStr = "";
         static void Main(string[] args)
         {
+            InitProject();
             while(!isEnd)
             {
                 switch (state)
@@ -27,13 +26,16 @@ namespace ConsoleApp1
                         break;
                 }
             }
+            void InitProject()
+            {
+                Console.SetWindowSize(windowWidth, windowHeight);
+                Console.SetBufferSize(windowWidth, windowHeight);
+                Console.CursorVisible = false;
+            }
         }
         public static void StartPanel()
         {
             Console.Clear();
-            Console.SetWindowSize(windowWidth, windowHeight);
-            Console.SetBufferSize(windowWidth, windowHeight);
-            Console.CursorVisible = false;
             PrintPanel(true);
             ConsoleKey key;
             bool isStart = true;
@@ -195,7 +197,6 @@ namespace ConsoleApp1
             {
                 Console.CursorVisible = false;
             }
-
             void PrintWall()
             {
                 Console.ForegroundColor = ConsoleColor.Red;
