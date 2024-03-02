@@ -8,6 +8,5 @@ namespace Practice
         {
             CSharpLevel2.Practice();
         }
-
     }
 }

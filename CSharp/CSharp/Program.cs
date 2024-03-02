@@ -8,6 +8,14 @@ namespace CSharp
         {
 
         }
+        static void Print(int[] arr)
+        {
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+        }
     }
 
 }

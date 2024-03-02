@@ -1,10 +1,12 @@
-﻿namespace Practice.Practice01
+﻿using System.ComponentModel;
+
+namespace Practice.Practice01
 {
     public class CSharpLevel2
     {
         public static void Practice()
         {
-            Practice03();
+           Practice09();
         }
 
         public static void Practice01()
@@ -381,6 +383,256 @@
                 PrintArr(arr);
             }
         }
+
+        public static void Practice04(int a)
+        {
+            Console.WriteLine(a++);
+            if (a > 10)
+                return;
+            Practice04(a);
+        }
+        public static int Practice05(int a)
+        {
+            if (a == 1)
+                return 1;
+            return a * Practice05(a - 1);
+        }
+        public static int Practice06(int a)
+        {
+            if (a == 1)
+                return 1;
+            return Practice05(a) + Practice06(a - 1);
+        }
+        public static void Practice07(float length, int day)
+        {
+            length /= 2;
+            if (day == 10)
+            {
+                Console.WriteLine($"第{day}天剩下{length}米");
+                return;
+            }
+            Practice07(length, day + 1);
+        }
+        public static bool Practice08(int num)
+        {
+            Console.WriteLine(num);
+
+            return num == 200 || Practice08(num + 1);
+        }
+        public static void Practice09()
+        {
+            byte num = 0;
+            PrintTitle("结构体");
+            Qusetion01();
+            //Qusetion02();
+            //Question03();
+            Question04();
+            void Qusetion01()
+            {
+                PrintSubTitle(ref num);
+                Student s1 = new Student("张三", true, 18, 1, "计算机");
+                s1.Speak();
+                Student s2 = new Student();
+                s2.Speak();
+            }
+            void Qusetion02()
+            {
+                PrintSubTitle(ref num);
+                Rectangle r1 = new Rectangle(10, 20);
+                r1.Print();
+                Rectangle r2 = new Rectangle(20, 30);
+                r2.Print();
+            }
+            void Question03()
+            {
+                PrintSubTitle(ref num);
+                Player player;
+                Console.WriteLine("请输入玩家的名字");
+                player.name = Console.ReadLine();
+                Console.WriteLine("请输入玩家的职业: 战士 猎人 法师");
+                player.profession = Console.ReadLine();
+                string message = "";
+                switch(player.profession)
+                {
+                    case "战士":
+                        message = "冲锋";
+                        break;
+                    case "猎人":
+                        message = "假死";
+                        break;
+                    case "法师":
+                        message = "奥术攻击";
+                        break;
+                }
+                Console.WriteLine($"{player.name}释放了{message}");
+            }
+            void Question04()
+            {
+                PrintSubTitle(ref num);
+                Monster[] monsters = new Monster[10];
+                Random random = new Random();
+                for(int i = 0; i < 10; i++)
+                {
+                    monsters[i].name = "小怪兽" + i;
+                    monsters[i].atk = random.Next(1, 101);
+                }
+                for(int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine($"{monsters[i].name}的攻击力为{monsters[i].atk}");
+                }
+
+            }
+        }
+
+
+        static void CalcMax()
+        {
+            int a = GetRandomNum();
+            int b = GetRandomNum();
+            Console.WriteLine($"a = {a}, b = {b}, max = {(a >= b ? a : b)}");
+        }
+        static float[] CalcCircle(int radius)
+        {
+            return new float[] { 3.14F * radius * radius, 2 * 3.14F * radius };
+        }
+
+        static int[] CalaArr(int[] arr)
+        {
+            int sum = 0;
+            int max = arr[0];
+            int min = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+                if (arr[i] > max)
+                    max = arr[i];
+                else if (arr[i] < min)
+                    min = arr[i];
+            }
+            return new int[4] { sum, max, min, sum / arr.Length };
+        }
+        static void CalcPrime(int num)
+        {
+            if (num == 1)
+            {
+                Console.WriteLine("是质数");
+                return;
+            }
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    Console.WriteLine("不是质数");
+                    return;
+                }
+            }
+            Console.WriteLine("是质数");
+        }
+        static void CalcLeapYear()
+        {
+            int year = 0;
+            Console.WriteLine("Please Enter a year");
+            year = int.Parse(Console.ReadLine());
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+                Console.WriteLine("润年");
+            else
+                Console.WriteLine("不是闰年");
+        }
+
+        static int GetRandomNum(int min = 0, int max = 101)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+        static bool Login(ref string message)
+        {
+            Console.WriteLine("请输入用户名");
+            if (Console.ReadLine() != "admin")
+            {
+                message = "用户名错误";
+                return false;
+            }
+            Console.WriteLine("请输入密码");
+            if (Console.ReadLine() != "8888")
+            {
+                message = "密码错误";
+                return false;
+            }
+            return true;
+        }
+        static int Test(int a, int b)
+        {
+            return 0;
+        }
+        static void CalcTest01(params int[] arr)
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            Console.WriteLine("和为 " + sum + "平均值为 " + (sum / (float)arr.Length));
+        }
+        public static void CalcTest02(params int[] arr)
+        {
+            int sum01 = 0;
+            int sum02 = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] % 2 == 0)
+                {
+                    sum01 += arr[i];
+                }
+                else
+                {
+                    sum02 += arr[i];
+                }
+            }
+            Console.WriteLine("偶数和为 " + sum01 + "奇数和为 " + sum02);
+        }
+        public static int CalcMax(int a, int b)
+        {
+            return a > b ? a : b;
+        }
+        public static float CalcMax(float a, float b)
+        {
+            return a > b ? a : b;
+        }
+        public static double CalcMax(double a, double b)
+        {
+            return a > b ? a : b;
+        }
+        public static void CalcMax(params int[] arr)
+        {
+            int max = arr[0];
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                    max = arr[i];
+            }
+            Console.WriteLine("最大值为 " + max);
+        }
+        public static void CalcMax(params float[] arr)
+        {
+            float max = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                    max = arr[i];
+            }
+            Console.WriteLine("最大值为 " + max);
+        }
+        public static void CalcMax(params double[] arr)
+        {
+            double max = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                    max = arr[i];
+            }
+            Console.WriteLine("最大值为 " + max);
+        }
+
         enum EQQState
         {
             OnLine,
@@ -423,4 +675,95 @@
         }
 
     }
+    struct Student
+    {
+        public string name;
+        public bool gender;
+        public int age;
+        public byte classNum;
+        public string profession;
+        public Student(string name, bool gender, int age, byte classNum, string profession)
+        {
+            this.name = name;
+            this.gender = gender;
+            this.age = age;
+            this.classNum = classNum;
+            this.profession = profession;            
+        }
+        public void Speak()
+        {
+            Console.WriteLine($"我是{name}, 我今年{age}岁，我的名别是{(gender ? "男" : "女")}， 我的班级是{classNum}, 我的专业是{profession}");
+        }
+    }
+    struct Rectangle
+    {
+        public float length;
+        public float width;
+        public Rectangle(float length, float width)
+        {
+            this.length = length;
+            this.width = width;
+        }
+        public float GetArea()
+        {
+            return length * width;
+        }
+        public float GetPerimeter()
+        {
+            return (length + width) * 2;
+        }
+        public void Print()
+        {
+            Console.WriteLine($"长{length}, 宽{width}, 周长{GetPerimeter()}, 面积{GetArea()}");
+        }
+    }
+    struct Player
+    {
+        public string name;
+        public string profession;
+    }
+    struct Monster
+    {
+        public string name;
+        public int atk;
+    }
+    struct Ultraman
+    {
+        public string name;
+        public int atk;
+        public int def;
+        public int hp;
+        public Ultraman(string name, int atk, int def, int hp)
+        {
+            this.name = name;
+            this.atk = atk;
+            this.def = def;
+            this.hp = hp;
+        }
+        public void Atk(ref Boss boss)
+        {
+            boss.hp -= this.atk - boss.def;
+            Console.WriteLine($"{name}攻击{boss.name}，造成了{this.atk - boss.def}伤害，剩余血量{boss.hp}");
+        }
+    }
+    struct Boss
+    {
+        public string name;
+        public int atk;
+        public int def;
+        public int hp;
+        public Boss(string name, int atk, int def, int hp)
+        {
+            this.name = name;
+            this.atk = atk;
+            this.def = def;
+            this.hp = hp;
+        }
+        public void Atk(ref Ultraman ultraman)
+        {
+            ultraman.hp -= this.atk - ultraman.def;
+            Console.WriteLine($"{name}攻击{ultraman.name}，造成了{this.atk - ultraman.def}伤害，剩余血量{ultraman.hp}");
+        }
+    }
+
 }
