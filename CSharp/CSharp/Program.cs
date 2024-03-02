@@ -6,17 +6,15 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
+            Person a = new Person();
+            Person b = a;
+            b = null;
 
-        }
-        static void Print(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine();
         }
     }
+    public class Person
+    {
 
+    }
 }
  
