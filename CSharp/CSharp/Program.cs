@@ -6,15 +6,8 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            Person a = new Person();
-            Person b = a;
-            b = null;
-
+            
         }
-    }
-    public class Person
-    {
-
     }
 }
  

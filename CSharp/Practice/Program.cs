@@ -1,4 +1,5 @@
-﻿using Practice.Practice01;
+﻿using Practice.Practice;
+using Practice.Practice01;
 
 namespace Practice
 {
@@ -6,7 +7,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            CSharpLevel2.Practice();
+            CSharpLevel4.Practice();
         }
     }
 }
