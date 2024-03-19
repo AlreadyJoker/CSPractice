@@ -6,7 +6,14 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            
+  
+        }
+        enum Type
+        {
+            Add,
+            Subtract,
+            Multiply,
+            Divide
         }
     }
 }
